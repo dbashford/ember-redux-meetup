@@ -1,0 +1,34 @@
+  <div>
+    {{result.id}} - {{result.title}}
+  </div>
+  <div>
+    {{result.desc}}
+  </div>
+  <div>
+    {{#if isAvailable}}
+      <button {{action "addToCart" result}}>Add To Cart
+        {{#if result.countInCart}}
+          ({{result.countInCart}} in your cart)
+        {{/if}}
+      </button>
+      {{#if isLowInventory}}
+        <span class='inventory-message low-inventory'>
+          Act now, only {{result.inventoryCount}} left!
+        </span>
+      {{/if}}
+    {{else}}
+      {{#if result.countInCart}}
+        {{result.countInCart}} in your cart.
+      {{/if}}
+      {{#if isDiscontinued}}
+        <span class='inventory-message discontinued'>
+          This item has been discontinued and will no longer be available.
+        </span>
+      {{/if}}
+      {{#if isOutOfStock}}
+        <span class='inventory-message out-of-stock'>
+          This item is temporarily out of stock, add it to your wish list!
+        </span>
+      {{/if}}
+    {{/if}}
+  </div>

@@ -1,0 +1,21 @@
+<div class='row'>
+  {{shopping-header
+    cartItems=cartItems
+    purchaseCart=(action 'purchaseCart')
+  }}
+</div>
+
+<div class='row'>
+  <div class='col-3'>
+    {{shopping-filters
+      results=availableResults
+      showOnlyAvailable=showOnlyAvailable
+    }}
+  </div>
+  <div class='col-9'>
+    {{shopping-results
+      results=availableResults
+      addToCart=(action 'addToCart')
+    }}
+  </div>
+</div>

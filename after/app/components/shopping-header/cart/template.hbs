@@ -1,0 +1,19 @@
+<a href='javascript:void(0)' {{action 'showCart'}}>Cart ({{cartItems.length}})</a>
+
+{{#if viewCart}}
+  {{#each cartItems as |cartItem|}}
+    <div>
+      {{cartItem.title}} - {{cartItem.quantity}} @ {{cartItem.cost}} - ${{cartItem.itemTotalCost}}
+    </div>
+  {{/each}}
+
+  {{#if cartTotal}}
+    <div>
+      <b>Total cost is ${{cartTotal}}</b>
+    </div>
+
+    <div>
+      <button {{action 'purchaseCart'}}>Buy it!</button>
+    </div>
+  {{/if}}
+{{/if}}
