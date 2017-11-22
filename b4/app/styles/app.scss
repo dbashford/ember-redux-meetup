@@ -1,0 +1,23 @@
+@import "ember-cli-bootstrap-4/bootstrap";
+
+.single-result {
+  margin-bottom: 15px;
+
+  button {
+    margin-right: 10px;
+  }
+
+  .inventory-message {
+    &.low-inventory {
+      font-weight: bold;
+    }
+
+    &.discontinued {
+      color: rgb(68, 0, 255);
+    }
+
+    &.out-of-stock {
+      color: rgb(100, 102, 66);
+    }
+  }
+}

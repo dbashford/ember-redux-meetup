@@ -1,0 +1,20 @@
+{{shopping-results/header
+  results=results
+  pageSize=pageSize
+  pageNumber=pageNumber
+}}
+
+{{shopping-results/results
+  results=results
+  pageSize=pageSize
+  pageNumber=pageNumber
+  addToCart=addToCart
+}}
+
+{{shopping-results/pagination
+  results=results
+  pageSize=pageSize
+  pageNumber=pageNumber
+  updatePageSize=(action (mut pageSize))
+  updatePageNumber=(action (mut pageNumber))
+}}

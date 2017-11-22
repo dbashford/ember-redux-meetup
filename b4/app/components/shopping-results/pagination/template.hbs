@@ -1,0 +1,16 @@
+<div>
+  <button {{action "first"}} disabled={{onFirstPage}}>First</button>
+  <button {{action "previous"}} disabled={{onFirstPage}}>Previous</button>
+  <button {{action "next"}} disabled={{onLastPage}}>Next</button>
+  <button {{action "last"}} disabled={{onLastPage}}>Last</button>
+</div>
+
+<div>
+  Results per page:
+  <select onchange={{action 'updatePageSize' value="target.value"}}>
+    {{#each pageSizes as |aPageSize|}}
+      <option value={{aPageSize}} selected={{eq aPageSize pageSize}}>{{aPageSize}}</option>
+    {{/each}}
+  </select>
+</div>
+
